@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image to PDF</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-100 font-sans tracking-wide">
+  <section class="container mx-auto px-2 lg:px-4 py-4">
+    <h1 class="text-[48px] font-bold text-center text-slate-700">Images to PDF</h1>
+    <p class="text-center text-[24px] font-medium pb-12 text-slate-700">Convert Images to PDF in seconds.</p>
+    <div class="flex flex-col lg:flex-row justify-center items-center min-h-[48vh]">
+      <div class="w-1/2 flex justify-center items-center">
+        <img class="w-[50%]" src="{{ url_for('static', filename='images/img_to_pdf.svg') }}" alt="Image to PDF converter">
+      </div>
+      <form method=post enctype=multipart/form-data action="{{ url_for('convert') }}" class="w-1/2">
+        <input type=file name=files[] multiple>
+        <button class="bg-blue-500 text-white text-200 font-bold py-2 px-4 rounded" type="submit">Convert</button>
+      </form>
+    </div>
+  </section>
+</body>
+
+</html>
